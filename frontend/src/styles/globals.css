@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --custom-background: inherit;
+  --custom-foreground: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --custom-background: #0a0a0a;
+    --custom-foreground: #ededed;
+  }
+}
+
+body {
+  font-family: inherit;
+  background: inherit;
+  color: inherit;
+}
