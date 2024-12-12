@@ -39,4 +39,16 @@ export class UserService {
     }
     return user;
   }
+
+  update(id: string, updatedData: Partial<Omit<User, 'id'>>): User {
+    const userIndex = this.users.findIndex((user) => user.id === id);
+    if (userIndex === -1) {
+      throw new NotFoundException(`User with ID "${id}" not found`);
+    }
+    this.users[userIndex] = {
+      ...this.users[userIndex],
+      ...updatedData,
+    };
+    return this.users[userIndex];
+  }
 }
