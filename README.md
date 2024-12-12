@@ -43,3 +43,49 @@ npm run dev
 ```
 
 The frontend service should now be running on http://localhost:3000.
+
+## SQL Exercise
+
+Given a database schema with the following tables:
+
+### Employees Table
+
+| Column Name   |
+| ------------- |
+| employee_id   |
+| first_name    |
+| last_name     |
+| salary        |
+| department_id |
+
+---
+
+### Departments Table
+
+| Column Name     |
+| --------------- |
+| department_id   |
+| department_name |
+
+Define the following sql queries:
+
+- Find the highest salary in the 'Sales' department
+  - Solution:
+  ```sql
+  SELECT MAX(Employees.salary) AS highest_salary FROM Employees JOIN Departments ON Employees.department_id = Departments.department_id WHERE Departments.department_name = 'Sales';
+  ```
+- Find the average salary of employees in each department
+  - Solution:
+  ```sql
+  SELECT Departments.department_name, AVG(Employees.salary) AS average_salary FROM Employees JOIN Departments ON Employees.department_id = Departments.department_id GROUP BY Departments.department_name;
+  ```
+- Find the number of employees in each department
+  - Solution
+  ```sql
+  SELECT Departments.department_name, COUNT(Employees.employee_id) AS employee_count FROM Employees JOIN Departments ON Employees.department_id = Departments.department_id GROUP BY Departments.department_name;
+  ```
+- Find the top 5 highest paid employees
+  - Solution
+  ```sql
+  SELECT employee_id, first_name, last_name, salary, department_id FROM Employees ORDER BY salary DESC LIMIT 5;
+  ```
