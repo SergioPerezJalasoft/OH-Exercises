@@ -89,3 +89,88 @@ Define the following sql queries:
   ```sql
   SELECT employee_id, first_name, last_name, salary, department_id FROM Employees ORDER BY salary DESC LIMIT 5;
   ```
+
+## Backend Project Setup and Run Instructions
+
+This guide provides steps to set up and run the backend service of the project.
+
+---
+
+### Prerequisites
+
+- [Download Node.js](https://nodejs.org/) (latest version recommended).
+  - Verify installation by running:
+    ```bash
+    node -v
+    npm -v
+    ```
+
+### Installation
+
+Install the project dependencies by running:
+
+```bash
+npm install
+```
+
+### Running the Project
+
+Start the development server with the following command:
+
+```bash
+npm run start
+```
+
+The backend service should now be running on http://localhost:3001.
+
+### API Endpoints
+
+---
+
+#### 1. **Get All Users**
+
+- **URL**: `/users`
+- **Method**: `GET`
+- **Description**: Retrieves a list of all users.
+
+#### 2. **Get a Specific User**
+
+- **URL**: `/users/:id`
+- **Method**: `GET`
+- **Description**: Retrieves a specific user by their ID.
+
+#### 3. **Create a New User**
+
+- **URL**: `/users`
+- **Method**: `POST`
+- **Request Body**:
+
+```json
+{
+  "username": "new_user",
+  "email": "new@example.com",
+  "password": "securepassword"
+}
+```
+
+- **Description**: Creates a new user.
+
+#### 4. **Update a User**
+
+- **URL**: `/users/:id`
+- **Method**: `PUT`
+- **Request Body (Any subset of username, email, password):**:
+
+```json
+{
+  "email": "updated@example.com"
+}
+```
+
+- **Description**: Updates a user's information.
+
+#### 5. **Delete a User**
+
+- **URL**: `/users/:id`
+- **Method**: `DELETE`
+- **Description**: Deletes a user by their ID.
