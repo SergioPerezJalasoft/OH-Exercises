@@ -51,4 +51,12 @@ export class UserService {
     };
     return this.users[userIndex];
   }
+
+  delete(id: string): void {
+    const userIndex = this.users.findIndex((user) => user.id === id);
+    if (userIndex === -1) {
+      throw new NotFoundException(`User with ID "${id}" not found`);
+    }
+    this.users.splice(userIndex, 1);
+  }
 }
