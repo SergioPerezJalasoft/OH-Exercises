@@ -98,12 +98,21 @@ This guide provides steps to set up and run the backend service of the project.
 
 ### Prerequisites
 
-- [Download Node.js](https://nodejs.org/) (latest version recommended).
-  - Verify installation by running:
-    ```bash
-    node -v
-    npm -v
-    ```
+1. Ensure you have **Node.js** and **npm** installed:
+
+   - [Download Node.js](https://nodejs.org/) (latest version recommended).
+   - Verify installation by running:
+     ```bash
+     node -v
+     npm -v
+     ```
+
+2. Navigate to the `backend` folder:
+   - Open your terminal or command prompt.
+   - Use the `cd` command to navigate to the `backend` directory of the project:
+     ```bash
+     cd backend
+     ```
 
 ### Installation
 
